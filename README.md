@@ -4,7 +4,7 @@ Audio transcriber tool
 
 ## Features
 
-* Audio transcription
+* Audio transcription. Include your audio file in the src directory
 * Saves output to a txt file `{my_audio_file}-transcription.txt` as well as the clipboard
 * Supports both mp3 and wav audio files
 
