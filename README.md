@@ -10,8 +10,7 @@ Audio transcriber tool
 
 ## Dependencies
 
-Have ffmpeg installed on your system
-Install the following using `pip`
+Have both ffmpeg and pip installed on your system then install the following using pip
 ```
 $ pip install pydub
 $ pip install ffmpeg
