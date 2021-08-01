@@ -1,6 +1,7 @@
 '''
 dependencies
 pip install SpeechRecognition
+pip install pydub
 
 description
 Provide it with the audio file and it'll
@@ -12,6 +13,7 @@ WAV: must be in PCM/LPCM format
 '''
 
 import pprint
+from pydub import AudioSegment
 import speech_recognition as sr
 
 r = sr.Recognizer()
@@ -21,9 +23,14 @@ with jackhammer as source:
 	r.adjust_for_ambient_noise(source, duration=0.5)
 	audio = r.record(source)
 
-text = r.recognize_google(audio, show_all=True)
+def rec():
+	text = r.recognize_google(audio, show_all=True)
+	pp = pprint.PrettyPrinter(depth=6)
+	pp.pprint(text)
+	# print(text)
 
+def mp3_to_wav():
+	sound = AudioSegment.from_mp3("/path/to/file.mp3")
+	sound.export("/output/path/file.wav", format="wav")
 
-pp = pprint.PrettyPrinter(depth=6)
-pp.pprint(text)
-# print(text)
+rec()
